@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website </title>
+    <link rel="stylesheet" href="style.css"> <!--This is how we link the style sheet--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p> Computer Science</p>
+                <h1>Shambhavi Bhandari </h1>
+            </div>
+        </div>
+    </div>
+    <!------------------------about---------------------------> 
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" height="400">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p> Hello my name is Shambhavi Bhandari. I'm a second year computer science student at Califorina State University Los Angeles. </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Java,Python</span><br>Chess Game</li>
+                            <li><span>CSS,HTML,JavaScript</span><br>Web Development</li>
+                            <li><span>C++</span><br>Game Development using Unity</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>August 2022-Current</span><br>ACM Project Committee</li>
+                            <li><span>June 2022-August 2022</span><br>Launch Pad Student Assistant</li>
+                            <li><span>October 2022-Current</span><br>Dean's Student Assistant</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021- 2025 </span><br>Califorina State University Los Angeles </li>
+                        </ul>
+                    </div>
+                
+                
+                </div>
+
+            </div>
+        </div>
+    </div>
+   <!------------------------Portfolio---------------------------> 
+   <div id="portfolio">
+       <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png" height="300">
+                <div class="layer">
+                    <h3>GUI Chess Game</h3>
+                    <p> This is a one player chess game where the user plays againt the computer which randomly generates moves</p>
+                    <a href="#"><i class="fa-regular fa-arrow-up-right-from-square"></i></a>
+                   
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png" height="300">
+                <div class="layer">
+                    <h3>Battleship Game</h3>
+                    <p> A Battleship game made use Java. The user will input the number or row's and coloums they want in their battleship board and from their the user must guess at what row and col the battleship is. The battleship positions are generated randomly</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png"height="300">
+                <div class="layer">
+                    <h3>Web Developnent</h3>
+                    <p> This is where you would put your websire etc...</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+
+       </div>
+
+   </div>
+<!------------------------Contact Me---------------------------------------> 
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>bhandarishambhavi@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>3109689472</p>
+                <div class="social-icons"> 
+                    <a href="https://www.linkedin.com/in/shambhavi-bhandari-592291234/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/ShambhaviBhandari"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name= "Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id= "msg"></span>
+            </div>
+        </div> 
+    </div>
+</div>
+
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzm_kP1Gmlpnv5k-HUkvzup01qzeZPscz9E2sEvpn5WyvqEkkF07EShngdTdIwyfqLn/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML= "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+
+
+      </script>
+</body>
+</html>
+
+
+
+
+
